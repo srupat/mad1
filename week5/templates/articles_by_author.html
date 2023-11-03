@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4">All Articles</h1>
+            <h1 class="display-4">Author Articles - {{ username }}</h1>
         </div>
         <div class="row">
             <div class="col-md-8">
@@ -21,7 +21,7 @@
                     <h2>{{ article["title"]}}</h2>
                     <p>Written By : 
                         {% for author in article["authors"] %}
-                        <a href="/articles_by/{{ author['username']}}">{{ author['username']}}</a>{% if not loop.last %},{% endif %}
+                        {{ author['username']}}{% if not loop.last %},{% endif %}
                         {% endfor %}
                     </p>
                     <div class="content">{{ article["content"]}}</div>

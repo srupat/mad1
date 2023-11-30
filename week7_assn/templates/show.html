@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+</head>
+
+<body>
+    <table id="personal-details">
+        <tr>
+            <th>Roll Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        <tr>
+            <td>{{student['roll_number']}}</td>
+            <td>{{student['first_name']}}</td>
+            <td>{{student['last_name']}}</td>
+        </tr>
+    </table>
+    {% if enroll %}
+    <table id="student-enrollments">
+        <thead>
+            <tr>
+                <th>SNo</th>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Course Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>s_no_1</td>
+                <td>c_code_1</td>
+                <td>c_name_1</td>
+                <td>c_desc_1</td>
+                <td>
+                    <a href="/student/<int:student_id>/withdraw/<int:course_id>">Withdraw</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {%endif%}
+    <a href="/">Go Back</a>
+</body>
+
+</html>

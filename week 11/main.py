@@ -8,8 +8,6 @@ from flask_security import Security, SQLAlchemySessionUserDatastore, SQLAlchemyU
 from application.models import User, Role
 from flask_migrate import Migrate
 
-
-
 app = None
 api = None
 

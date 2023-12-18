@@ -34,3 +34,22 @@ class ArticleAuthors(db.Model):
     __tablename__ = 'article_authors'
     user_id = db.Column(db.Integer,   db.ForeignKey("user.id"), primary_key=True, nullable=False)
     article_id = db.Column(db.Integer,  db.ForeignKey("article.article_id"), primary_key=True, nullable=False) 
+
+
+class Category(db.Model):
+    __tablename__ = 'category'
+    category_id = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True)
+    title = db.Column(db.String)
+    slug = db.Column(db.String, unique=True)
+
+class ArticleCategories(db.Model):
+    __tablename__ = 'article_categories'
+    article_id = db.Column(db.Integer, db.ForeignKey("article.article_id"), primary_key=True)
+    category_id = db.Column(db.Integer, db.ForeignKey("category.category_id"),primary_key=True, nullable=False)
+
+class ArticleSearch(db.Model):
+    __tablename__ = 'article_search'
+    __table_args__ = {'info': dict(is_virtual=True)}
+    rowid = db.Column(db.Integer, primary_key=True)
+    title=db.Column(db.String)
+    content=db.Column(db.String)

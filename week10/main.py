@@ -45,6 +45,10 @@ def forbidden(e):
 from application.api import UserAPI
 api.add_resource(UserAPI,"/api/user", "/api/user/<string:username>")
 
+@app.before_first_request
+def create_tables():
+    db.create_all()
+
 if __name__ == '__main__':
   # Run the Flask app
   app.run(host='0.0.0.0',port=8081)

@@ -21,8 +21,6 @@ function send_like(event){
     article = event.target
     article_id = article.dataset.article_id
 
-   
-
     fetch("/article_like/" + article_id).then(
         response=>thanks(article, response)
     ).catch(

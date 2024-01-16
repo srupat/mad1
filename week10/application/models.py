@@ -1,5 +1,6 @@
 from .database import db
 from flask_security import UserMixin, RoleMixin
+from flask_sqlalchemy import SQLAlchemy
 
 roles_users = db.Table('roles_users',
                        db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),

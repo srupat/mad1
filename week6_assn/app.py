@@ -1,8 +1,11 @@
 import os
-from flask import Flask
-from flask_restful import Resource, Api
 from application import config
 from application.config import LocalDevelopmentConfig
+from flask import Flask
+from flask_restful import Api
+from flask import render_template
+from flask import request
+from sqlalchemy.orm import scoped_session
 from application.database import db
 
 app = None
@@ -22,12 +25,7 @@ def create_app():
 
 app, api = create_app()
 
-# Import all the controllers so they are loaded
 from application.controllers import *
 
-from application.api import UserAPI
-api.add_resource(UserAPI,"/api/user", "/api/user/<string:username>")
-
-if __name__ == '__main__':
-  # Run the Flask app
-  app.run(host='0.0.0.0',port=8081)
+if __name__ == "__main__":
+    app.run()

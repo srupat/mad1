@@ -4,3 +4,6 @@ from application.models import User, Article
 from application.validation import NotFoundError
 from flask_restful import reqparse
 from application.validation import BusinessValidationError
+
+class UserAPI():
+    something

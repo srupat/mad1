@@ -6,6 +6,7 @@ from application.config import LocalDevelopmentConfig, TestingConfig
 from application.database import db
 from flask_security import Security, SQLAlchemySessionUserDatastore, SQLAlchemyUserDatastore
 from application.models import User, Role
+
 # what the hell
 
 app = None
